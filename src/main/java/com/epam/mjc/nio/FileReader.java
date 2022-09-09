@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class FileReader {
 
     public Profile getDataFromFile(File file) {
-        Path path = Paths.get("src/main/resources/Profile.txt");
+        Path path = file.toPath();
         StringBuilder content = new StringBuilder();
         try (Stream<String> lines = Files.lines(path)){
             lines.forEach(s -> content.append(s).append("--"));
